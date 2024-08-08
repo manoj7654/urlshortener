@@ -3,7 +3,7 @@ const express=require("express")
 const { url, sortUrl } = require("../controller/urlController")
 const { authenticate } = require("../middleware/authenticate")
 
-// <------------creating employee router------------------->
+// <------------creating urlshortner router------------------->
 const urlRouter=express.Router()
 
 /**
@@ -28,7 +28,7 @@ const urlRouter=express.Router()
 
 urlRouter.post("/originalUrl",authenticate,url)
 
-urlRouter.get("/:shortenUrl",authenticate,sortUrl)
+urlRouter.get("/shorten/:shortenUrl",authenticate,sortUrl)
 
 
 module.exports={urlRouter}
