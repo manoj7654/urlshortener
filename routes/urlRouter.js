@@ -1,6 +1,7 @@
 // <-----------------importing express ------------------>
 const express=require("express")
 const { url, sortUrl } = require("../controller/urlController")
+const { authenticate } = require("../middleware/authenticate")
 
 // <------------creating employee router------------------->
 const urlRouter=express.Router()
@@ -25,9 +26,9 @@ const urlRouter=express.Router()
  *         shortenUrl: "http://localhost:4500/shortId"
  */
 
-urlRouter.post("/originalUrl",url)
+urlRouter.post("/originalUrl",authenticate,url)
 
-urlRouter.get("/:shortenUrl",sortUrl)
+urlRouter.get("/:shortenUrl",authenticate,sortUrl)
 
 
 module.exports={urlRouter}
