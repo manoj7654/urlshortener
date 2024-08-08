@@ -16,12 +16,9 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static("public"));
 
-// Route for the base API endpoint "/"
-// app.get("/", (req, res) => {
-//     // This will serve index.html from the 'public' folder
-//     res.sendFile(__dirname + "/public/index.html");
-// });
-// app.use("/tasks",taskRouter)
+app.use("/",(req,res)=>{
+    res.josn({"message":"Welcome to the url shortner api"})
+})
 app.use("/",userRouter)
 app.use("/",urlRouter)
 app.use(swaggerRouter)
