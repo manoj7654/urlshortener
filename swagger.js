@@ -13,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:4500/',
+        url: 'https://urlshortener-qxju.onrender.com/',
       },
     ],
   },
@@ -22,6 +22,6 @@ const options = {
 
 const specs = swaggerJsDoc(options);
 
-swaggerRouter.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+swaggerRouter.use('/api/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 module.exports = swaggerRouter;
