@@ -22,6 +22,6 @@ const options = {
 
 const specs = swaggerJsDoc(options);
 
-swaggerRouter.use('/api/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+swaggerRouter.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 module.exports = swaggerRouter;

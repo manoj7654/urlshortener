@@ -16,9 +16,9 @@ app.use(express.json());
 app.use(cors());
 // app.use(express.static("public"));
 
-app.use("/",(req,res)=>{
-    res.json({"message":"Welcome to the url shortner api"})
-})
+// app.use("/",(req,res)=>{
+//     res.json({"message":"Welcome to the url shortner api"})
+// })
 app.use("/",userRouter)
 app.use("/",urlRouter)
 app.use(swaggerRouter)
