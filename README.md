@@ -160,4 +160,4 @@ Create a MongoDB database and configure the connection string in the .env file.
 
 
 ### Swagger Link
-[Swagger](https://urlshortener-qxju.onrender.com/api/api-docs)
+[Swagger](https://urlshortener-qxju.onrender.com/swagger/api-docs)
