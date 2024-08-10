@@ -19,9 +19,22 @@ const generateUniqueShortUrl = async (length) => {
     return shortenUrl;
 };
 
+const isValidUrl = (url) => {
+    try {
+        new URL(url);
+        return true;
+    } catch (err) {
+        return false;
+    }
+};
+
 const url = async (req, res) => {
     console.log('Incoming request body:', req.body);
     const { url, length, alias } = req.body;
+    if (!isValidUrl(url)) {
+        return res.status(400).send({ msg: "Invalid URL format" });
+    }
+
     const encryptedUrl = cryptr.encrypt(url);
     let shortenUrl;
 
